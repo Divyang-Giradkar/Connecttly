@@ -64,25 +64,6 @@ exports.logCommunication = async (req, res) => {
 
 //test mode ebd 
 
-
-// // Log a new communication
-// exports.logCommunication = async (req, res) => {
-//   try {
-//     const { companyId, communicationType, communicationDate, notes } = req.body;
-//     const communication = new Communication({ companyId, communicationType, communicationDate, notes });
-//     await communication.save();
-
-//     // Update next communication date in company
-//     const company = await Company.findById(companyId);
-//     company.nextCommunicationDate = new Date(communicationDate);
-//     await company.save();
-
-//     res.status(201).json({ message: 'Communication logged successfully', communication });
-//   } catch (err) {
-//     res.status(400).json({ message: 'Error logging communication', error: err });
-//   }
-// };
-
 // Get communications for a specific company
 exports.getCommunicationsByCompany = async (req, res) => {
   try {

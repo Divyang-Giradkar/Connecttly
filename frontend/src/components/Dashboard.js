@@ -77,8 +77,8 @@ const Dashboard = () => {
                         </div>
 
                         {/* Overdue Tasks Card */}
-                        <div className="dashboard-card">
-                            <h2>Overdue Tasks</h2>
+                        <div className="dashboard-card" >
+                            <h2 style={{color:"red"}}>Overdue Tasks</h2>
                             {loading ? (
                                 <p>Loading overdue tasks...</p>
                             ) : error ? (
@@ -88,9 +88,9 @@ const Dashboard = () => {
                                     <ul>
                                         {overdueTasks.map(task => (
                                             <li key={task._id}>
-                                                <p><strong>Company:</strong> {task.name}</p>
-                                                <p><strong>Date:</strong> {new Date(task.nextCommunicationDate).toLocaleDateString()}</p>
-                                                <p><strong>Comments:</strong> {task.comments || "No comments"}</p>
+                                                <p style={{color:"red", background:'#F2F2F2'}}><strong style={{color:"red", background:'#F2F2F2'}}>Company:</strong> {task.name}</p>
+                                                <p><strong style={{color:"red", background:'#F2F2F2'}}>Date:</strong> {new Date(task.nextCommunicationDate).toLocaleDateString()}</p>
+                                                <p><strong style={{color:"red", background:'#F2F2F2'}}>Comments:</strong> {task.comments || "No comments"}</p>
                                             </li>
                                         ))}
                                     </ul>

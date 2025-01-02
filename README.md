@@ -9,3 +9,7 @@
 <h2>Screenshots</h2>
 <h3>Dashboard</h3>
 <p>The dashboard provides a comprehensive overview of companies and upcoming tasks.</p>
+
+![Screenshot 2025-01-02 183851](https://github.com/user-attachments/assets/f2b0b8e6-7bbf-4b32-9d58-12c48ce3f7b4)
+
+

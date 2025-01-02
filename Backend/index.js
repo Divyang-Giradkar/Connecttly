@@ -4,9 +4,10 @@ const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+
+
 const AdminRoutes = require('./routes/adminRoutes');
 const UserRoutes = require('./routes/userRoutes');
-const EventRoutes = require('./routes/eventRoutes');
 const companyRoutes = require('./routes/companyRoutes');
 const communicationRoutes = require('./routes/commuctionRoutes');
 
@@ -25,6 +26,7 @@ app.use('/api/admin', AdminRoutes);
 app.use('/api/user', UserRoutes);
 app.use('/api/companies', companyRoutes);
 app.use('/api/commuction', communicationRoutes);
+
 
 // Database connection
 mongoose.connect("mongodb+srv://divyanggiradkar2:divyang@calander.bmpsq.mongodb.net/?retryWrites=true&w=majority&appName=Calander")

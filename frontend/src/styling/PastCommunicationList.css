@@ -1,0 +1,131 @@
+/* Overall container styling */
+.container-pastlist {
+  
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
+
+/* Content wrapper to arrange sidebar and main content side by side */
+.content-wrapper-pastlist {
+  display: flex;
+  flex: 1;
+  margin-top: 20px; /* Reduced space between navbar and content */
+}
+
+/* Main content (company list) area styling */
+.company-list-pastlist {
+  margin-left: 20px; /* Space for the fixed sidebar */
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Enables vertical scrolling if content overflows */
+  max-height: calc(100vh - 80px); /* Ensures the content height is limited to the available space below navbar */
+  margin-top: 10px; /* No extra margin at the top */
+  padding-left: 10px; /* Reduce space between sidebar and content */
+  background-color: #f4f6f9; /* Soft light gray background for contrast */
+  border-radius: 10px;
+}
+
+/* Title styling */
+.title-pastlist {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2c3e50; /* Dark blue-gray for better readability */
+  font-weight: bold;
+  border-bottom: 3px solid #3498db; /* Adds a colored underline */
+  padding-bottom: 5px;
+  
+}
+
+/* Grid layout for company cards */
+.grid-pastlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
+  
+}
+
+/* Individual company card styling */
+.card-pastlist {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-pastlist:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Communication card inside each company card */
+.communication-card-pastlist {
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  border-left: 4px solid #3498db; /* Accent border for style */
+}
+
+/* Error message styling */
+.error-message-pastlist {
+  color: #e74c3c; /* Red with a softer tone */
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Communication list scrollable area */
+.communication-list-pastlist {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Date indicator styles */
+.red-pastlist {
+  color: white;
+  background-color: #e74c3c; /* Brighter red for visibility */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.green-pastlist {
+  color: white;
+  background-color: #2ecc71; /* Vibrant green */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Button styling */
+.company-list-pastlist button {
+  background-color: #3498db; /* Bright blue for primary buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  align-self: flex-end;
+}
+
+.company-list-pastlist button:hover {
+  background-color: #2980b9; /* Slightly darker blue on hover */
+  transform: translateY(-3px);
+}
+
+.company-list-pastlist button:active {
+  background-color: #1c598a;
+  transform: translateY(1px);
+}

@@ -1,0 +1,42 @@
+.overdue-task-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    height: 100vh;
+  }
+  
+  .overdue-content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px;
+  }
+  
+  .overdue-main-content {
+    flex: 1;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 84vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .overdue-title-wrapper {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 10;
+    padding: 10px 0;
+  }
+  
+  .overdue-task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  

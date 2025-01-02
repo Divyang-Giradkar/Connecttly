@@ -1,0 +1,74 @@
+/* CommunicationLog.css */
+.container-commuctionlog{
+    max-width: 800px;
+    margin: 50px 50px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading-commuctionlog{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .company-name-commuctionlog{
+    color: #1d4ed8; /* Blue */
+  }
+  
+  .form-group-commuctionlog{
+    margin-bottom: 20px;
+  }
+  
+  .label-commuctionlog{
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .select-commuctionlog, .textarea-commuctionlog{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+  
+  .select-commuctionlog:focus, .textarea-commuctionlog:focus {
+    border-color: #1d4ed8; /* Blue */
+    outline: none;
+    box-shadow: 0 0 5px rgba(29, 78, 216, 0.5);
+  }
+  
+  .button-commuctionlog{
+    padding: 12px 20px;
+    background-color: #1d4ed8; /* Blue */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+    
+  }
+  
+  .button-commuctionlog:hover {
+    background-color: #2563eb; /* Darker blue */
+  }
+  
+  .success-message-commuctionlog {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d1fae5; /* Light green */
+    color: #065f46; /* Green */
+    border-left: 5px solid #10b981; /* Green */
+    border-radius: 8px;
+  }
+  

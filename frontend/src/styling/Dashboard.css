@@ -1,0 +1,137 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+}
+
+.dashboard-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.dashboard-main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8fafc; /* Light background */
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #343a40; /* Dark gray */
+    font-weight: bold;
+    text-align: center;
+}
+
+.dashboard-card-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.dashboard-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #ffffff; /* White */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card h2 {
+    font-size: 22px;
+    color: #0d6efd; /* Primary blue */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.dashboard-card-number {
+    font-size: 36px;
+    color: #0d6efd; /* Primary blue */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: #6c757d; /* Medium gray */
+    font-size: 16px;
+}
+
+.dashboard-view-all-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #0d6efd; /* Primary blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-view-all-btn:hover {
+    background-color: #084298; /* Darker blue */
+}
+
+.dashboard-task-list {
+    margin-top: 15px;
+    max-height: 300px; /* Limit the height for the list */
+    overflow-y: auto; /* Make it scrollable */
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+.dashboard-task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard-task-list li {
+    background-color: #f1f3f5; /* Light background for tasks */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-task-list li p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #495057;
+}
+
+.dashboard-task-list li p strong {
+    color: #0d6efd; /* Blue for important labels */
+}
+
+.dashboard-quick-fix-btn {
+    background-color: #28a745; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-quick-fix-btn:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.dashboard-card.short-width {
+    width: 250px; /* Shortened width for the "No of Companies Registered" card */
+}

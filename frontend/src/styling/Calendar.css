@@ -1,0 +1,149 @@
+/* General Container Styling */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* Layout Styling */
+.calendar-layout {
+  display: flex;
+  flex: 1;
+  gap: 20px; /* Adds spacing between sidebar and content */
+  padding: 20px;
+  overflow: hidden; /* Prevents layout-breaking scroll */
+}
+
+/* Sidebar Styling */
+
+
+
+/* Calendar Content Section Styling */
+.calendar-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* FullCalendar Event Styling */
+.fc-event {
+  font-size: 14px;
+  padding: 5px;
+  margin: 2px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fc-event:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Event Color Customizations */
+.fc-event-red {
+  background-color: #ff6b6b !important;
+  border-color: #ff6b6b !important;
+  color: #fff;
+}
+
+.fc-event-yellow {
+  background-color: #ffd93d !important;
+  border-color: #ffd93d !important;
+  color: #000;
+}
+
+.fc-event-green {
+  background-color: #28a745 !important;
+  border-color: #28a745 !important;
+  color: #fff;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .calendar-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+.fc-daygrid-day-frame {
+  height: 100px;
+  overflow: scroll;
+  scrollbar-width: none;
+  border: 1px solid #ddd; /* Light border for structure */
+  padding: 10px;
+  background-color: #f9f9f9; /* Light background for day grid */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.calendar-legend {
+  padding: 0px;
+  background-color: #fff;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+.calendar-legend h4 {
+  margin-bottom: 10px;
+}
+
+.calendar-legend ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 20px ;
+}
+
+.calendar-legend li {
+  margin: 5px 0;
+}
+
+.red-circle {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.green-circle {
+  width: 15px;
+  height: 15px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.blue-circle {
+  width: 15px;
+  height: 15px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+
+.current-day {
+  background-color: #ffcc00 !important;
+  color: white;
+  font-weight: bold;
+}

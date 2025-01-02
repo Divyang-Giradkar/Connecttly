@@ -52,7 +52,7 @@
   <h3>Clone the Repository:</h3>
 
    <p>Open your terminal and execute:<p>
-    bash - copy code
+   git bash - copy code
      
             git clone <[repository-link](https://github.com/Divyang-Giradkar/Connecttly.git)>
             cd <repository-folder>

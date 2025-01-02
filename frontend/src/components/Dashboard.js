@@ -13,6 +13,7 @@ const Dashboard = () => {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
+    // to fentch all companies data 
     useEffect(() => {
         const fetchCompanyData = async () => {
             try {
@@ -41,6 +42,9 @@ const Dashboard = () => {
         fetchCompanyData();
     }, []);
 
+
+    //  to get all overdue task data 
+    
     useEffect(() => {
         const fetchOverdueTasks = async () => {
             try {

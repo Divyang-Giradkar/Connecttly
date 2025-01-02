@@ -9,6 +9,9 @@ const CompanyList = () => {
   const [role] = useState(localStorage.getItem("role")); // Fetch user role
   const [editModalData, setEditModalData] = useState(null); // For the edit modal
 
+  
+  // get data of all copmanies  
+
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
@@ -22,6 +25,8 @@ const CompanyList = () => {
     fetchCompanies();
   }, []);
 
+  //  handle to delete company 
+
   const handleDelete = async (id) => {
     try {
       await axios.delete(`https://connecttly.onrender.com/api/companies/company/${id}`);
@@ -32,6 +37,8 @@ const CompanyList = () => {
       alert("Error deleting company. Please try again.");
     }
   };
+
+  // handle to edit companies details 
 
   const handleEditSave = async (updatedData) => {
     try {
@@ -52,6 +59,8 @@ const CompanyList = () => {
     }
   };
 
+  // to change date format in date/month/year
+
   const formatDate = (dateString) => {
     if (!dateString) return "N/A";
     const date = new Date(dateString);
@@ -61,6 +70,8 @@ const CompanyList = () => {
       year: "numeric",
     }).format(date);
   };
+
+  // use to comapre date with today to give color highlight
 
   const getDateStatus = (dateString) => {
     if (!dateString) return "";
@@ -73,12 +84,15 @@ const CompanyList = () => {
     return "future";
   };
 
+
+
   return (
     <div>
       <Navbar />
       <div className="companylist-container">
         <UserSidebar />
-        {/* Edit Modal */}
+       
+       {/* edit form available only when we cick on edit buttom */}
       {editModalData && (
         <div className="edit-modal">
           <div className="edit-modal-content">
@@ -139,6 +153,9 @@ const CompanyList = () => {
           </div>
         </div>
       )}
+
+
+      
         <div className="companylist-content">
           <h1>Company List</h1>
           <div className="companylist-grid">

@@ -16,8 +16,11 @@ const CalendarComponent = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
+        // handle a fencth data of company 
         const companiesResponse = await axios.get('https://connecttly.onrender.com/api/companies/companies');
         const companies = companiesResponse.data;
+
+        // the data fencth by a company data there will id each id will replace by function and get past commuction date and note of all companies 
 
         const eventPromises = companies.map(async (company) => {
           const communicationsResponse = await axios.get(`https://connecttly.onrender.com/api/commuction/communications/company/${company._id}`);
@@ -30,6 +33,8 @@ const CalendarComponent = () => {
               notes: comm.notes,
             },
           }));
+
+//  get color highlight for calander where it define a diffrent color for diffrent sitution
 
           const nextCommunicationDate = company.nextCommunicationDate;
           if (nextCommunicationDate) {
@@ -63,6 +68,9 @@ const CalendarComponent = () => {
     fetchCompanies();
   }, []);
 
+
+
+// this handle transfer to overdue task area when user see there is overdue task in calander user click it trasfer to overdue section
   const handleEventClick = (info) => {
     const isOverdue = info.event.backgroundColor === 'red';
     if (isOverdue) {
@@ -72,9 +80,12 @@ const CalendarComponent = () => {
     }
   };
 
+
   const currentDate = new Date().toISOString().split('T')[0]; // Get the current date in YYYY-MM-DD format
   console.log(currentDate); // Verify if the current date is correct
 
+
+  
   return (
     <div className="calendar-container">
       <Navbar />

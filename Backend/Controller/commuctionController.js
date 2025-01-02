@@ -1,10 +1,9 @@
 const Communication = require('../Models/CommuctionModel');
 const Company = require('../Models/companyModel');
+const moment = require('moment'); 
 
-// test mode 
 
-const moment = require('moment'); // To help with date manipulation
-
+// set communication log 
 exports.logCommunication = async (req, res) => {
   try {
     const { companyId, communicationType, notes } = req.body;
@@ -16,10 +15,12 @@ exports.logCommunication = async (req, res) => {
     const communication = new Communication({
       companyId,
       communicationType,
-      communicationDate, // Use today's date for communicationDate
+      communicationDate, 
       notes,
     });
     await communication.save();
+
+
 
     // Find the company to get its communicationPeriodicity
     const company = await Company.findById(companyId);
@@ -29,7 +30,7 @@ exports.logCommunication = async (req, res) => {
     }
 
     // Parse the communicationPeriodicity value to calculate the next communication date
-    const today = moment(); // Get today's date
+    const today = moment();
     let nextCommunicationDate;
 
     if (company.communicationPeriodicity.includes('week')) {
@@ -60,9 +61,6 @@ exports.logCommunication = async (req, res) => {
   }
 };
 
-
-
-//test mode ebd 
 
 // Get communications for a specific company
 exports.getCommunicationsByCompany = async (req, res) => {

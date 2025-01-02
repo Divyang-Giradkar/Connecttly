@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../styling/Login.css'; 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../styling/Login.css';
 
 const LoginForm = () => {
     const [role, setRole] = useState('user');
@@ -9,6 +11,7 @@ const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+    const [loading, setLoading] = useState(false); // Loading state
     const navigate = useNavigate();
 
     const handleRoleChange = (newRole, e) => {
@@ -24,31 +27,33 @@ const LoginForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+        setLoading(true); // Start loading
+
         const apiUrl = `https://connecttly.onrender.com/api/${role}/${isSignup ? 'signup' : 'login'}`;
         const data = isSignup ? { username, email, password } : { email, password };
-    
+
         try {
             const response = await axios.post(apiUrl, data);
-    
+
             if (!isSignup && response.data.token) {
                 localStorage.setItem('authToken', response.data.token);
-                localStorage.setItem('role', role); // Store role in localStorage
-    
+                localStorage.setItem('role', role);
+
                 if (role === 'admin') {
                     navigate('/admin-dashboard');
                 } else {
                     navigate('/dashboard');
                 }
             }
-    
-            alert(response.data.message || `${isSignup ? 'Signup' : 'Login'} successful!`);
+
+            toast.success(response.data.message || `${isSignup ? 'Signup' : 'Login'} successful!`);
         } catch (error) {
             console.error(error);
-            alert(error.response?.data?.message || 'An error occurred. Please try again.');
+            toast.error(error.response?.data?.message || 'An error occurred. Please try again.');
+        } finally {
+            setLoading(false); // End loading
         }
     };
-    
 
     return (
         <div className="login-form-container">
@@ -57,12 +62,14 @@ const LoginForm = () => {
                     <button
                         className={`role-button ${role === 'user' ? 'active-role' : ''}`}
                         onClick={(e) => handleRoleChange('user', e)}
+                        disabled={loading} // Disable role change during loading
                     >
                         User Login
                     </button>
                     <button
                         className={`role-button ${role === 'admin' ? 'active-role' : ''}`}
                         onClick={(e) => handleRoleChange('admin', e)}
+                        disabled={loading} // Disable role change during loading
                     >
                         Admin Login
                     </button>
@@ -81,6 +88,7 @@ const LoginForm = () => {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         className="login-input"
+                        disabled={loading} // Disable input during loading
                     />
                 )}
                 <input
@@ -89,6 +97,7 @@ const LoginForm = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="login-input"
+                    disabled={loading} // Disable input during loading
                 />
                 <input
                     type="password"
@@ -96,12 +105,24 @@ const LoginForm = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="login-input"
+                    disabled={loading} // Disable input during loading
                 />
-                <button className="login-submit-button">{isSignup ? 'Signup' : 'Login'} as {role}</button>
-                <h5 className="login-toggle-text" onClick={handleLoginChange}>
+                <button 
+                    className="login-submit-button" 
+                    disabled={loading} // Disable button during loading
+                >
+                    {loading ? 'Processing...' : `${isSignup ? 'Signup' : 'Login'} as ${role}`}
+                </button>
+                <h5 
+                    className="login-toggle-text" 
+                    onClick={handleLoginChange} 
+                    style={{ cursor: 'pointer', color: loading ? 'gray' : 'inherit' }} 
+                    disabled={loading} // Disable toggle during loading
+                >
                     Click here for {isSignup ? 'Login' : 'Signup'}
                 </h5>
             </form>
+            <ToastContainer position="top-right" autoClose={3000} />
         </div>
     );
 };

@@ -1,6 +1,6 @@
 const Company = require('../Models/companyModel');
 
-// Create a new company
+
 // Create a new company
 exports.createCompany = async (req, res) => {
   try {
@@ -27,6 +27,9 @@ exports.createCompany = async (req, res) => {
   }
 };
 
+
+
+
 // Get all companies
 exports.getCompanies = async (req, res) => {
   try {
@@ -36,6 +39,9 @@ exports.getCompanies = async (req, res) => {
     res.status(400).json({ message: 'Error fetching companies', error: err });
   }
 };
+
+
+
 
 // Edit a company
 exports.updateCompany = async (req, res) => {
@@ -47,6 +53,8 @@ exports.updateCompany = async (req, res) => {
   }
 };
 
+
+
 // Delete a company
 exports.deleteCompany = async (req, res) => {
   try {
@@ -56,6 +64,8 @@ exports.deleteCompany = async (req, res) => {
     res.status(400).json({ message: 'Error deleting company', error: err });
   }
 };
+
+
 
 
 // get company by id 

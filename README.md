@@ -13,17 +13,19 @@
 ![Screenshot 2025-01-02 183851](https://github.com/user-attachments/assets/f2b0b8e6-7bbf-4b32-9d58-12c48ce3f7b4)
 
 ------------------------------------------------------------------------------------------------------------------
-
+<br><br>
 <h3><strong>Admin Module - Company Management(Dashboard)</strong></h3>
 <p>Easily manage companies, add communication details, and set periodic schedules.</p><br>
 
 ![Screenshot 2025-01-02 184324](https://github.com/user-attachments/assets/3ff5ab7b-32ad-4bf1-b8e1-fe6384021122)
 
+<br><br>
+
 ![Screenshot 2025-01-02 184350](https://github.com/user-attachments/assets/60373cc1-d627-46a7-b6e1-aa1f71e8dbaf)
 
 -------------------------------------------------------------------------------------------------------------
-
-<h3>Calendar View</h3>
+<br><br>
+<h3>Calendar View</h3><br>
 
 
 ![Screenshot 2025-01-02 183925](https://github.com/user-attachments/assets/f6bb6d5b-400b-4576-9944-044398f733b0)

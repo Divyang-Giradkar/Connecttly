@@ -73,6 +73,7 @@ const CalendarComponent = () => {
   };
 
   const currentDate = new Date().toISOString().split('T')[0]; // Get the current date in YYYY-MM-DD format
+  console.log(currentDate); // Verify if the current date is correct
 
   return (
     <div className="calendar-container">
@@ -91,22 +92,35 @@ const CalendarComponent = () => {
           <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             initialView="dayGridMonth"
-            headerToolbar={{
-              left: 'prev,next today',
-              center: 'title',
-              right: 'dayGridMonth,timeGridWeek,timeGridDay',
-            }}
             events={events}
             eventClick={handleEventClick}
             height="auto"
             dayCellDidMount={(info) => {
-              // Highlight the current date
+              // Log the current date cell to check the date
+              console.log(info.dateStr, currentDate); // Log to check if the dates match
+              
+              // Compare the date of the cell with the current date
               if (info.dateStr === currentDate) {
-                // Apply custom styles for today's date
                 const cell = info.el;
+                
+                // Apply styling to highlight today's date
                 cell.style.backgroundColor = '#ffcc00'; // Yellow background for today
                 cell.style.color = 'white'; // White text color
                 cell.style.fontWeight = 'bold'; // Bold text for today's date
+                cell.style.border = '2px solid #ff9900'; // Border to distinguish today
+                
+                // Optional: Add "Today" label to the cell
+                const indicator = document.createElement('span');
+                indicator.innerText = 'Today';
+                indicator.style.position = 'absolute';
+                indicator.style.top = '5px';
+                indicator.style.left = '5px';
+                indicator.style.fontSize = '12px';
+                indicator.style.backgroundColor = '#ff9900';
+                indicator.style.color = 'white';
+                indicator.style.padding = '2px 5px';
+                indicator.style.borderRadius = '3px';
+                cell.appendChild(indicator);
               }
             }}
           />

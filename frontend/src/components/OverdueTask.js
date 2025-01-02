@@ -13,7 +13,7 @@ const OverdueTask = () => {
   useEffect(() => {
     const fetchOverdueTasks = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/commuction/communications/overdue');
+        const response = await fetch('https://connecttly.onrender.com/api/commuction/communications/overdue');
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }

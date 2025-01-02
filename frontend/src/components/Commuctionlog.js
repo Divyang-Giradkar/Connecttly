@@ -16,7 +16,7 @@ const CommunicationLog = () => {
   useEffect(() => {
     const fetchCompanyName = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/companies/company/${companyId}`);
+        const response = await fetch(`https://connecttly.onrender.com/api/companies/company/${companyId}`);
         if (!response.ok) throw new Error('Failed to fetch company details.');
         const data = await response.json();
         setCompanyName(data.name);
@@ -30,7 +30,7 @@ const CommunicationLog = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/commuction/communication', {
+      const response = await fetch('https://connecttly.onrender.com/api/commuction/communication', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

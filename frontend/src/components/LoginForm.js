@@ -25,7 +25,7 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
     
-        const apiUrl = `http://localhost:5000/api/${role}/${isSignup ? 'signup' : 'login'}`;
+        const apiUrl = `https://connecttly.onrender.com/api/${role}/${isSignup ? 'signup' : 'login'}`;
         const data = isSignup ? { username, email, password } : { email, password };
     
         try {

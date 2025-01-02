@@ -16,11 +16,11 @@ const CalendarComponent = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const companiesResponse = await axios.get('http://localhost:5000/api/companies/companies');
+        const companiesResponse = await axios.get('https://connecttly.onrender.com/api/companies/companies');
         const companies = companiesResponse.data;
 
         const eventPromises = companies.map(async (company) => {
-          const communicationsResponse = await axios.get(`http://localhost:5000/api/commuction/communications/company/${company._id}`);
+          const communicationsResponse = await axios.get(`https://connecttly.onrender.com/api/commuction/communications/company/${company._id}`);
           const communications = communicationsResponse.data;
 
           const communicationEvents = communications.map((comm) => ({

@@ -12,7 +12,7 @@ const PastCommunicationList = () => {
 
   const fetchCompanies = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/companies/companies');
+      const response = await fetch('https://connecttly.onrender.com/api/companies/companies');
       if (!response.ok) throw new Error("Failed to fetch companies.");
       const data = await response.json();
       return data;
@@ -24,7 +24,7 @@ const PastCommunicationList = () => {
   const fetchCompanyCommunications = async (companyId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/commuction/communications/company/${companyId}`
+        `https://connecttly.onrender.com/api/commuction/communications/company/${companyId}`
       );
       if (!response.ok) throw new Error(`Failed to fetch communications for company ${companyId}`);
       const data = await response.json();

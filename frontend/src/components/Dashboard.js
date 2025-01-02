@@ -16,7 +16,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchCompanyData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/companies/companies');
+                const response = await fetch('https://connecttly.onrender.com/api/companies/companies');
                 if (!response.ok) throw new Error(`Error: ${response.status}`);
 
                 const data = await response.json();
@@ -44,7 +44,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchOverdueTasks = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/commuction/communications/overdue');
+                const response = await fetch('https://connecttly.onrender.com/api/commuction/communications/overdue');
                 if (!response.ok) throw new Error(`Error: ${response.status}`);
 
                 const data = await response.json();

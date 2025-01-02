@@ -41,7 +41,7 @@ const AdminDashboard = () => {
       };
       console.log(postData);
 
-      const response = await axios.post('http://localhost:5000/api/companies/company', postData);
+      const response = await axios.post('https://connecttly.onrender.com/api/companies/company', postData);
 
       setMessage(response.data.message); // Show success message
     } catch (error) {

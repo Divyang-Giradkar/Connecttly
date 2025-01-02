@@ -12,7 +12,7 @@ const CompanyList = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/companies/companies');
+        const response = await axios.get('https://connecttly.onrender.com/api/companies/companies');
         setCompanies(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -24,7 +24,7 @@ const CompanyList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/companies/company/${id}`);
+      await axios.delete(`https://connecttly.onrender.com/api/companies/company/${id}`);
       setCompanies((prev) => prev.filter((company) => company._id !== id));
       alert("Company deleted successfully");
     } catch (error) {
@@ -36,7 +36,7 @@ const CompanyList = () => {
   const handleEditSave = async (updatedData) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/companies/company/${editModalData._id}`,
+        `https://connecttly.onrender.com/api/companies/company/${editModalData._id}`,
         updatedData
       );
       const updatedCompany = response.data.company;

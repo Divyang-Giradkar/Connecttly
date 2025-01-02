@@ -7,3 +7,5 @@
 <p>The application is deployed on Render and can be accessed at - https://connecttly-frontend.onrender.com/</p>
 
 <h2>Screenshots</h2>
+<h3>Dashboard</h3>
+<p>The dashboard provides a comprehensive overview of companies and upcoming tasks.</p>

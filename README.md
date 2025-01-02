@@ -5,3 +5,5 @@
 
 <h2><strong>Deployment Details</strong></h2>
 <p>The application is deployed on Render and can be accessed at - https://connecttly-frontend.onrender.com/</p>
+
+<h2>Screenshots</h2>

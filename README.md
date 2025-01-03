@@ -54,7 +54,7 @@
    <p>Open your terminal and execute:<p>
    git bash - copy code
      
-            git clone <[repository-link](https://github.com/Divyang-Giradkar/Connecttly.git)>
+            git clone https://github.com/Divyang-Giradkar/Connecttly.git
             cd <repository-folder>
 
   <p>Install Dependencies:</p>

@@ -55,8 +55,13 @@
    git bash - copy code
      
             git clone https://github.com/Divyang-Giradkar/Connecttly.git
-            cd <repository-folder>
+            cd connecttly
 
+ <p>Open backend and frontend directory in  terminal</p>
+ 
+           --->connecttly/backend
+           ----> connecttly / frontend
+       
   <p>Install Dependencies:</p>
 
          npm install
